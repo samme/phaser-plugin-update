@@ -1,3 +1,5 @@
+import Phaser from 'phaser';
+
 export default class UpdatePlugin extends Phaser.Plugins.ScenePlugin {
   boot () {
     const events = this.systems.events;
@@ -49,6 +51,4 @@ export default class UpdatePlugin extends Phaser.Plugins.ScenePlugin {
   }
 }
 
-if ((typeof window !== 'undefined') && window.Phaser) {
-  window.Phaser.Plugins.UpdatePlugin = UpdatePlugin;
-}
+Phaser.Plugins.UpdatePlugin = UpdatePlugin;
