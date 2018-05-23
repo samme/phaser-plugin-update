@@ -17,27 +17,29 @@ var scene = {
     sprite4.update = function () { this.x++; };
     sprite5.update = function () { this.y++; };
 
-    console.log('add');
+    console.log('updates.add');
     this.updates.add(sprite1);
     this.updates.dump();
 
-    console.log('addMultiple');
+    console.log('updates.addMultiple');
     this.updates.addMultiple([sprite2, sprite3, sprite4, sprite5]);
     this.updates.dump();
 
-    console.log('remove');
-    sprite4.setText('4 remove');
-    this.updates.remove(sprite4);
-    this.updates.dump();
+    this.time.delayedCall(3000, function () {
+      console.log('updates.remove');
+      sprite4.setText('4 remove');
+      this.updates.remove(sprite4);
+      this.updates.dump();
 
-    console.log('destroy');
-    sprite5.setText('5 destroy');
-    sprite5.destroy();
-    this.updates.dump();
+      console.log('sprite.destroy');
+      sprite5.setText('5 destroy');
+      sprite5.destroy();
+      this.updates.dump();
+    }, null, this);
 
-    this.time.delayedCall(5000, function () {
-      console.log('restart');
-      this.scene.restart();
+    this.time.delayedCall(6000, function () {
+      console.log('scene.stop');
+      this.scene.stop();
       this.updates.dump();
     }, null, this);
   },
@@ -48,6 +50,8 @@ var scene = {
 };
 
 new Phaser.Game({
+
+  width: 480, height: 480,
 
   scene: scene,
 
