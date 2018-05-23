@@ -1,7 +1,7 @@
 {
   "name": "phaser-plugin-update",
   "version": "0.1.0",
-  "description": "TODO",
+  "description": "Runs a Game Object's `update` method automatically.",
   "main": "dist/UpdatePlugin.js",
   "scripts": {
     "build": "npx babel src/main.es6 -o dist/UpdatePlugin.js",
@@ -13,7 +13,8 @@
     "url": "git+https://github.com/samme/phaser-plugin-update.git"
   },
   "keywords": [
-    "phaser-plugin"
+    "phaser-plugin",
+    "phaser3-plugin"
   ],
   "author": "samme",
   "license": "ISC",
