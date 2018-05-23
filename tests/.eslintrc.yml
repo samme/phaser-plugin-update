@@ -1,0 +1,9 @@
+env:
+  browser: true
+extends: '../.eslintrc.yml'
+rules:
+  no-console:
+    - warn
+    - allow:
+      - assert
+      - log

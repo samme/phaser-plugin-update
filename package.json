@@ -1,0 +1,31 @@
+{
+  "name": "phaser-plugin-update",
+  "version": "0.1.0",
+  "description": "TODO",
+  "main": "dist/UpdatePlugin.js",
+  "scripts": {
+    "build": "npx babel src/main.es6 -o dist/UpdatePlugin.js",
+    "start": "npx babel src/main.es6 --watch -o dist/UpdatePlugin.js",
+    "test": "eslint src/main.es6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samme/phaser-plugin-update.git"
+  },
+  "keywords": [
+    "phaser-plugin"
+  ],
+  "author": "samme",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samme/phaser-plugin-update/issues"
+  },
+  "homepage": "https://github.com/samme/phaser-plugin-update#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  },
+  "dependencies": {
+    "phaser": "^3.8.0"
+  }
+}
