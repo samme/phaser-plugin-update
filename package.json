@@ -1,6 +1,6 @@
 {
   "name": "phaser-plugin-update",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Runs a Game Object's `update` method automatically.",
   "main": "dist/UpdatePlugin.js",
   "scripts": {
