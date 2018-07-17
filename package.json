@@ -6,13 +6,15 @@
   "scripts": {
     "build": "npx babel src/main.es6 -o dist/UpdatePlugin.js",
     "start": "npx babel src/main.es6 --watch -o dist/UpdatePlugin.js",
-    "test": "eslint src/main.es6"
+    "test": "node -c dist/UpdatePlugin.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/samme/phaser-plugin-update.git"
   },
   "keywords": [
+    "phaser",
+    "phaser3",
     "phaser-plugin",
     "phaser3-plugin"
   ],
