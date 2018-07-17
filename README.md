@@ -16,5 +16,5 @@ In a scene:
 ```javascript
 this.updates.add(gameObject);
 // or
-this.updates.addMultiple([ gameObject ]);
+this.updates.addMultiple([ gameObject1, gameObject2 ]);
 ```
