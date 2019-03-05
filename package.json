@@ -2,11 +2,12 @@
   "name": "phaser-plugin-update",
   "version": "1.0.1",
   "description": "Runs a Game Object's `update` method automatically.",
-  "main": "dist/UpdatePlugin.js",
+  "main": "src/index.js",
   "scripts": {
-    "build": "npx babel src/main.es6 -o dist/UpdatePlugin.js",
-    "start": "npx babel src/main.es6 --watch -o dist/UpdatePlugin.js",
-    "test": "node -c dist/UpdatePlugin.js"
+    "build": "npx babel src/index.js -o dist/PhaserUpdatePlugin.js",
+    "start": "npx babel src/index.js --watch -o dist/PhaserUpdatePlugin.js",
+    "test": "npx eslint src/index.js",
+    "test:dist": "node -c dist/PhaserUpdatePlugin.js"
   },
   "repository": {
     "type": "git",
