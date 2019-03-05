@@ -1,6 +1,8 @@
+extends: '../.eslintrc.yml'
 env:
   browser: true
-extends: '../.eslintrc.yml'
+globals:
+  PhaserUpdatePlugin: false
 rules:
   no-console:
     - warn
