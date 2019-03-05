@@ -147,5 +147,7 @@
   exports.default = UpdatePlugin;
 
 
-  _phaser2.default.Plugins.UpdatePlugin = UpdatePlugin;
+  if (typeof window !== 'undefined') {
+    window.PhaserUpdatePlugin = UpdatePlugin;
+  }
 });

@@ -51,4 +51,6 @@ export default class UpdatePlugin extends Phaser.Plugins.ScenePlugin {
   }
 }
 
-Phaser.Plugins.UpdatePlugin = UpdatePlugin;
+if (typeof window !== 'undefined') {
+  window.PhaserUpdatePlugin = UpdatePlugin;
+}
