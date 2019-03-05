@@ -6,7 +6,7 @@ Runs a Game Object's `update` method automatically.
 ```javascript
 new Phaser.Game({
   plugins: {
-    scene: [{ key: 'updatePlugin', plugin: Phaser.Plugins.UpdatePlugin, mapping: 'updates' }]
+    scene: [{ key: 'updatePlugin', plugin: PhaserUpdatePlugin, mapping: 'updates' }]
   }
 });
 ```
