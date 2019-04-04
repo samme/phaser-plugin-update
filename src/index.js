@@ -22,7 +22,7 @@ export default class UpdatePlugin extends Phaser.Plugins.ScenePlugin {
   sceneDestroy () {
     const events = this.systems.events;
 
-    events.off('update', this.scenePostUpdate, this);
+    events.off('update', this.sceneUpdate, this);
     events.off('shutdown', this.sceneShutdown, this);
     events.off('destroy', this.sceneDestroy, this);
 
