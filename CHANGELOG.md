@@ -1,3 +1,8 @@
+2.0.1
+-----
+
+- Fixed wrong method name in sceneDestroy() (#1).
+
 2.0.0
 -----
 
