@@ -1,8 +1,11 @@
 extends: '../.eslintrc.yml'
 env:
   browser: true
+  es6: false
 globals:
-  PhaserUpdatePlugin: false
+  PhaserUpdatePlugin: readonly
+parserOptions:
+  sourceType: script
 rules:
   no-console:
     - warn
