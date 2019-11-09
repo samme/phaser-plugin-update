@@ -96,7 +96,9 @@
     }, {
       key: 'sceneUpdate',
       value: function sceneUpdate(time, delta) {
-        this.gameObjects.iterateLocal('update', time, delta);
+        this.gameObjects.each(function (obj) {
+          obj.update(time, delta);
+        });
       }
     }, {
       key: 'sceneShutdown',
