@@ -1,3 +1,8 @@
+2.0.4
+-----
+
+- Fixed an error when destroying a game object from its update method (#2). Thanks @Olliebrown.
+
 2.0.3
 -----
 
