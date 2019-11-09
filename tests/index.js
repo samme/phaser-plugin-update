@@ -16,8 +16,19 @@ var scene = {
     sprite1.update = function () { this.x++; };
     sprite2.update = function () { this.y++; };
     sprite3.update = function () { this.x++; this.y++; };
-    sprite4.update = function () { console.log('remove'); scene.updates.remove(this); };
-    sprite5.update = function () { console.log('destroy'); this.destroy(); };
+    sprite4.update = function (time, delta) {
+      console.assert((typeof time) === 'number');
+      console.assert((typeof delta) === 'number');
+      console.log('time, delta', time, delta);
+      console.log('remove');
+
+      scene.updates.remove(this);
+    };
+    sprite5.update = function () {
+      console.log('destroy');
+      
+      this.destroy();
+    };
 
     this.updates.add(sprite1);
     console.assert(this.updates.gameObjects.size === 1);
