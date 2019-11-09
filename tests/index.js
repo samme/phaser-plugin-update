@@ -11,38 +11,45 @@ var scene = {
     var sprite4 = this.add.circle(128, 128, 16, 0);
     var sprite5 = this.add.circle(160, 160, 16, 0);
 
+    var scene = this;
+
     sprite1.update = function () { this.x++; };
     sprite2.update = function () { this.y++; };
     sprite3.update = function () { this.x++; this.y++; };
-    sprite4.update = function () { this.x++; };
-    sprite5.update = function () { this.y++; };
+    sprite4.update = function () { console.log('remove'); scene.updates.remove(this); };
+    sprite5.update = function () { console.log('destroy'); this.destroy(); };
 
-    console.log('updates.add');
     this.updates.add(sprite1);
-    this.updates.dump();
+    console.assert(this.updates.gameObjects.size === 1);
+    console.assert(this.updates.gameObjects.contains(sprite1));
 
-    console.log('updates.addMultiple');
+    this.updates.remove(sprite1);
+    console.assert(this.updates.gameObjects.size === 0);
+    console.assert(!this.updates.gameObjects.contains(sprite1));
+
     this.updates.addMultiple([sprite2, sprite3, sprite4, sprite5]);
-    this.updates.dump();
+    console.assert(this.updates.gameObjects.size === 4);
+
+    this.time.delayedCall(100, function () {
+      console.assert(this.updates.gameObjects.size === 2);
+      console.assert(this.updates.gameObjects.contains(sprite2));
+      console.assert(this.updates.gameObjects.contains(sprite3));
+      console.assert(!this.updates.gameObjects.contains(sprite4));
+      console.assert(!this.updates.gameObjects.contains(sprite5));
+    }, null, this);
 
     this.time.delayedCall(3000, function () {
-      console.log('updates.remove');
-      sprite4.setAlpha(0.6);
-      this.updates.remove(sprite4);
-      this.updates.dump();
-
-      console.log('sprite.destroy');
-      sprite5.destroy();
-      this.updates.dump();
-    }, null, this);
-
-    this.time.delayedCall(6000, function () {
-      this.updates.dump();
-      console.log('scene.stop');
+      console.assert(this.updates.gameObjects.size === 2);
+      console.log('scene.stop()');
       this.scene.stop();
-      // console.log('scene.remove');
+      // console.log('scene.remove()');
       // this.scene.remove();
     }, null, this);
+
+    this.events.once('shutdown', function () {
+      console.log('shutdown');
+      console.assert(this.updates.gameObjects.size === 0);
+    }, this);
   }
 };
 
