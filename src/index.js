@@ -36,15 +36,18 @@ export default class UpdatePlugin extends Phaser.Plugins.ScenePlugin {
   add (obj) {
     obj.once('destroy', this.remove, this);
     this.gameObjects.set(obj);
+    return obj;
   }
 
   addMultiple (objs) {
     objs.forEach(this.add, this);
+    return objs;
   }
 
   remove (obj) {
     obj.off('destroy', this.remove, this);
     this.gameObjects.delete(obj);
+    return obj;
   }
 
   dump () {
