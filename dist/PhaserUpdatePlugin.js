@@ -123,17 +123,20 @@
       value: function add(obj) {
         obj.once('destroy', this.remove, this);
         this.gameObjects.set(obj);
+        return obj;
       }
     }, {
       key: 'addMultiple',
       value: function addMultiple(objs) {
         objs.forEach(this.add, this);
+        return objs;
       }
     }, {
       key: 'remove',
       value: function remove(obj) {
         obj.off('destroy', this.remove, this);
         this.gameObjects.delete(obj);
+        return obj;
       }
     }, {
       key: 'dump',
