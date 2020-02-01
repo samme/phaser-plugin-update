@@ -1,3 +1,8 @@
+2.1.0
+-----
+
+- Changed: `add()`, `addMultiple()`, and `remove()` return the objects passed to them (#3). Thanks @skn3.
+
 2.0.4
 -----
 
