@@ -4,8 +4,6 @@
   "description": "Runs a Game Object's `update` method automatically.",
   "main": "src/index.js",
   "scripts": {
-    "build": "npx babel src/index.js -o dist/PhaserUpdatePlugin.js",
-    "start": "npx babel src/index.js --watch -o dist/PhaserUpdatePlugin.js",
     "preversion": "npm run test && npm run build && npm run test:dist && git add dist",
     "test": "npx eslint src/index.js",
     "test:dist": "node -c dist/PhaserUpdatePlugin.js"
@@ -27,10 +25,7 @@
   },
   "homepage": "https://github.com/samme/phaser-plugin-update#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
-    "babel-preset-env": "^1.7.0",
-    "phaser": "3.55.2"
+    "phaser": "3.88.0"
   },
   "peerDependencies": {
     "phaser": "^3.16.2"
